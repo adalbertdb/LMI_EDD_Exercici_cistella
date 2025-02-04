@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Añadir filas a una tabla</title>
+    <link rel="stylesheet" href="cistella.css">
+</head>
+<body>
+    <table id="miTabla" border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ana</td>
+                <td>25</td>
+                <td>Madrid</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="agregarFila">Agregar Fila</button>
+
+    <script>
+        // Referencia a la tabla y el botón
+        const tabla = document.getElementById('miTabla').querySelector('tbody');
+        const boton = document.getElementById('agregarFila');
+
+        // Función para agregar una fila
+        boton.addEventListener('click', () => {
+            // Crear una nueva fila
+            const nuevaFila = document.createElement('tr');
+
+            // Crear y añadir celdas a la fila
+            const celdaNombre = document.createElement('td');
+            celdaNombre.textContent = 'Juan';
+
+            const celdaEdad = document.createElement('td');
+            celdaEdad.textContent = '30';
+
+            const celdaCiudad = document.createElement('td');
+            celdaCiudad.textContent = 'Barcelona';
+
+            // Añadir las celdas a la fila
+            nuevaFila.appendChild(celdaNombre);
+            nuevaFila.appendChild(celdaEdad);
+            nuevaFila.appendChild(celdaCiudad);
+
+            // Añadir la fila al cuerpo de la tabla
+            tabla.appendChild(nuevaFila);
+        });
+    </script>
+</body>
+</html>
